@@ -72,3 +72,15 @@ func TestDoublyLinkedList_PushBack(t *testing.T) {
 	require.Equal(t, nodes[0].Val, ddl.Front().Val, ddl.String())
 	require.Equal(t, nodes[9].Val, ddl.Back().Val, ddl.String())
 }
+
+func TestDoublyLinkedList_IsEmpty(t *testing.T) {
+	ddl := NewDoublyLinkedList()
+	require.True(t, ddl.IsEmpty())
+
+	node := NewDoublyLinkedListNode("1")
+	ddl.PushBack(&node)
+	require.False(t, ddl.IsEmpty())
+
+	ddl.Remove(&node)
+	require.True(t, ddl.IsEmpty())
+}

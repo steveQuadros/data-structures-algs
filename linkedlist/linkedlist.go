@@ -49,7 +49,7 @@ func (d *DoublyLinkedList) Remove(node *DoublyLinkedListNode) {
 }
 
 func (d *DoublyLinkedList) IsEmpty() bool {
-	return d.dummyHead == d.dummyTail
+	return d.dummyHead.Next == d.dummyTail
 }
 
 func (d *DoublyLinkedList) Front() *DoublyLinkedListNode {
